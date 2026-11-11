@@ -3,9 +3,9 @@ message: "If you use this software or the associated dataset, please cite the Da
 title: "melanoma-fibroblast-spheroids: image-analysis pipeline"
 type: software
 license: MIT
-version: "1.0.0"
+version: "1.1.0"
 date-released: 2026-11-11
-doi: 10.5281/zenodo.24133753
+doi: 10.5281/zenodo.24144822
 repository-code: "https://github.com/consiglionazionaledellericerche/lanzafame-lab-melanoma-fibroblast-spheroids"
 # TODO after publication: add the DOI of the article to preferred-citation.
 authors:

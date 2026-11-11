@@ -169,7 +169,7 @@ def main():
     parser.add_argument("--output_dir", type=str, default=None,
                         help="Output directory (default: same as data_dir).")
     parser.add_argument("--controls_only", action="store_true",
-                        help="Restrict to control samples (C5BO, C3PV, Fb2294).")
+                        help="Restrict to control samples (C5BO, C3PV, Fb1609).")
     args = parser.parse_args()
 
     data_dir = Path(args.data_dir)

@@ -66,7 +66,7 @@ Positive values indicate preferential fibroblast accumulation in the spheroid in
 ```
 {timepoint}_{sample}_{channel}_{replicate}.tif
 ```
-Example: `D7_C5BO_GFP_002.tif` / `D7_C5BO_PKH26_002.tif` (case-insensitive; `Fb2294`, `FB2294`, `2294` and the mistyped `FB2291` all map to donor `Fb2294`).
+Example: `D7_C5BO_GFP_002.tif` / `D7_C5BO_PKH26_002.tif` (case-insensitive; the donor tokens are C5BO, C3PV and Fb1609).
 
 ### Output CSVs
 One `spheroid_metrics.csv` and one `radial_profiles.csv` per experiment (folder given with `--output_dir`), concatenated into the deposited files by `01b_consolidate_experiments.py` (see below).
@@ -85,7 +85,7 @@ python scripts/02_compute_core_shell_metrics.py --data_dir 03_processed_data --o
 mv 03_processed_data/core_shell_metrics.csv 03_processed_data/core_shell_metrics_SKMEL28_control_strategyC.csv
 ```
 
-Expected output: 146 spheroids (41 + 32 + 73), 2,920 radial-profile rows; every deposited spheroid has one GFP and one PKH26 image (292 files). In experiment 3 the day-1 Fb2294 wells were acquired under the mistyped token "FB2291"; the deposited files are renamed D1_FB2294_* and the parser also accepts FB2291 as an alias of Fb2294. If a folder contains an unpaired single-channel image, the script skips it with a warning.
+Expected output: 146 spheroids (41 + 32 + 73), 2,920 radial-profile rows; every deposited spheroid has one GFP and one PKH26 image (292 files). If a folder contains an unpaired single-channel image, the script skips it with a warning.
 
 `03_quality_control.py` produces the Technical Validation numbers: per-image power log-log slope and saturation (written into `05_metadata/widefield_image_inventory.csv`, columns `plls`, `plls_outlier`, `pct_saturated`, `pct_above_4095`, `max_value`, `p999`), per-spheroid Dice agreement with an alternative segmentation rule, threshold sensitivity, GFP/PKH26 pair consistency (time gap, exposure) and channel centroid offset (`03_processed_data/segmentation_robustness_per_spheroid.csv`) and contact sheets of all masks (`03_processed_data/qc_overlays_widefield/`).
 
@@ -98,11 +98,11 @@ python scripts/03_quality_control.py --input_root 02_raw_images/widefield --inve
 
 ```bash
 python scripts/process_confocal_images.py --input_dir 02_raw_images/confocal --output_dir 03_processed_data/confocal \
-    --timepoint D7 --sample_map "C3PV_1:C3PV,C3PV_2:C3PV,C5BO_1:C5BO,C5BO_2:C5BO,Fb2294_1:Fb2294,Fb2294_2:Fb2294" \
-    --experiment_map "C3PV_1:20250728_C,C3PV_2:20250728_C,C5BO_1:20251021_C,C5BO_2:20251021_C,Fb2294_1:20251021_C,Fb2294_2:20251021_C"
+    --timepoint D7 --sample_map "C3PV_1:C3PV,C3PV_2:C3PV,C5BO_1:C5BO,C5BO_2:C5BO,Fb1609_1:Fb1609,Fb1609_2:Fb1609" \
+    --experiment_map "C3PV_1:20250728_C,C3PV_2:20250728_C,C5BO_1:20251021_C,C5BO_2:20251021_C,Fb1609_1:20251021_C,Fb1609_2:20251021_C"
 ```
 
-`--experiment_map` writes the `source_experiment` of each stack: `20250728_C` for C3PV_1 and C3PV_2, `20251021_C` for the C5BO and Fb2294 stacks.
+`--experiment_map` writes the `source_experiment` of each stack: `20250728_C` for C3PV_1 and C3PV_2, `20251021_C` for the C5BO and Fb1609 stacks.
 
 Perimeter is measured with an OpenCV contour, so `perim_*` and `circularity` are not on the same numerical scale as the widefield CSVs.
 

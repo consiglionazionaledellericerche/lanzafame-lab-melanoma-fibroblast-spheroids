@@ -5,7 +5,7 @@
 publiccodeYmlVersion: '0.7'
 name: melanoma-fibroblast-spheroids
 url: https://github.com/consiglionazionaledellericerche/lanzafame-lab-melanoma-fibroblast-spheroids
-softwareVersion: 1.0.0
+softwareVersion: 1.1.0
 releaseDate: '2026-11-11'
 organisation:
   uri: urn:x-italian-pa:cnr

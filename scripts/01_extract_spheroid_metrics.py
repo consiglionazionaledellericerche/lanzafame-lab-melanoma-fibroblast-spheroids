@@ -50,15 +50,14 @@ from skimage import filters, morphology, measure, segmentation
 # ======================================================================
 
 # Donors covered by this Data Descriptor: the three control fibroblast lines
-# (C5BO, C3PV, Fb2294).
-# Filename token (upper-cased) -> canonical donor identifier. The third control
-# donor is Fb2294; raw filenames write it as "Fb2294", "FB2294" or just "2294".
+# (C5BO, C3PV, Fb1609).
+# Filename token (upper-cased) -> canonical donor identifier.
 KNOWN_SAMPLE_IDS = {
-    "C5BO": "C5BO", "C3PV": "C3PV", "FB2294": "Fb2294", "2294": "Fb2294", "FB2291": "Fb2294",  # FB2291 = mistyped Fb2294 (experiment 3, day 1)
+    "C5BO": "C5BO", "C3PV": "C3PV", "FB1609": "Fb1609",
 }
 
 GROUP_MAP = {
-    "C5BO": "Control", "C3PV": "Control", "FB2294": "Control", "FB2291": "Control",
+    "C5BO": "Control", "C3PV": "Control", "FB1609": "Control",
 }
 
 

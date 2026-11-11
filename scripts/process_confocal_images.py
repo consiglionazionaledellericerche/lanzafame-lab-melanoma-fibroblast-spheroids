@@ -59,7 +59,7 @@ should not be treated as on the same numerical scale.
 Sample / timepoint provenance
 -----------------------------
 The deposited .lif files are named {DONOR}_{n} (C3PV_1, C3PV_2, C5BO_1,
-C5BO_2, Fb2294_1, Fb2294_2); the file stem is written as spheroid_id. Donor
+C5BO_2, Fb1609_1, Fb1609_2); the file stem is written as spheroid_id. Donor
 and timepoint are not read from the file metadata. They are supplied on the
 command line: --timepoint (one value for all stacks; the deposited spheroids
 were all fixed at day 7) and --sample_map ("C3PV_1:C3PV,C5BO_1:C5BO,...");
@@ -345,7 +345,7 @@ def compute_metrics_and_profiles(
     r_mean_core = float(r_norm[core_mask].mean()) if core_mask.any() else np.nan
     r_mean_shell = float(r_norm[shell_mask].mean()) if shell_mask.any() else np.nan
 
-    group = "Control" if sample.upper() in ("C5BO", "C3PV", "FB2294", "2294") else ("NA" if sample == "NA" else "Other")
+    group = "Control" if sample.upper() in ("C5BO", "C3PV", "FB1609") else ("NA" if sample == "NA" else "Other")
     metrics = {
         "source_experiment": source_experiment,
         "spheroid_id": spheroid_id,

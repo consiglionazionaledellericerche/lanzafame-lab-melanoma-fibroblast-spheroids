@@ -6,7 +6,7 @@ Image-analysis pipeline for the dataset described in:
 
 - Dataset: BioImage Archive, accession S-BIAD4346, <https://doi.org/10.6019/S-BIAD4346>
 - Source code: <https://github.com/consiglionazionaledellericerche/lanzafame-lab-melanoma-fibroblast-spheroids>
-- Archived code, version 1.0.0: Zenodo, <https://doi.org/10.5281/zenodo.24133753>
+- Archived code, version 1.1.0: Zenodo, <https://doi.org/10.5281/zenodo.24144822> (all versions: <https://doi.org/10.5281/zenodo.24133752>)
 - Browser tool for single-spheroid analysis: <https://lanzafame-lab-spheroid-core-shell-metrics.onrender.com/> (separate publication in preparation)
 - Laboratory web page: <https://www.igm.cnr.it/istituto-2/organizzazione/personale/lanzafame-manuela/>
 
@@ -15,7 +15,7 @@ Image-analysis pipeline for the dataset described in:
 
 ## Scope
 
-This repository contains the code used to generate the processed data deposited with the *Scientific Data* Data Descriptor: SK-MEL-28 melanoma cells co-seeded with primary dermal fibroblasts from three control donors (C5BO, C3PV, Fb2294), imaged by widefield (three experiments, days 1-7) and confocal microscopy. `01_extract_spheroid_metrics.py`, `01b_consolidate_experiments.py`, `02_compute_core_shell_metrics.py`, `process_confocal_images.py`, `convert_lif_to_ome_tiff.py` and `03_quality_control.py` reproduce the deposited files.
+This repository contains the code used to generate the processed data deposited with the *Scientific Data* Data Descriptor: SK-MEL-28 melanoma cells co-seeded with primary dermal fibroblasts from three control donors (C5BO, C3PV, Fb1609), imaged by widefield (three experiments, days 1-7) and confocal microscopy. `01_extract_spheroid_metrics.py`, `01b_consolidate_experiments.py`, `02_compute_core_shell_metrics.py`, `process_confocal_images.py`, `convert_lif_to_ome_tiff.py` and `03_quality_control.py` reproduce the deposited files.
 
 ---
 
@@ -102,8 +102,8 @@ Reads the primary two-channel z-stack of each Leica `.lif` file (requires `readl
 
 ```bash
 python scripts/process_confocal_images.py --input_dir 02_raw_images/confocal --output_dir 03_processed_data/confocal \
-    --timepoint D7 --sample_map "C3PV_1:C3PV,C3PV_2:C3PV,C5BO_1:C5BO,C5BO_2:C5BO,Fb2294_1:Fb2294,Fb2294_2:Fb2294" \
-    --experiment_map "C3PV_1:20250728_C,C3PV_2:20250728_C,C5BO_1:20251021_C,C5BO_2:20251021_C,Fb2294_1:20251021_C,Fb2294_2:20251021_C"
+    --timepoint D7 --sample_map "C3PV_1:C3PV,C3PV_2:C3PV,C5BO_1:C5BO,C5BO_2:C5BO,Fb1609_1:Fb1609,Fb1609_2:Fb1609" \
+    --experiment_map "C3PV_1:20250728_C,C3PV_2:20250728_C,C5BO_1:20251021_C,C5BO_2:20251021_C,Fb1609_1:20251021_C,Fb1609_2:20251021_C"
 ```
 
 `convert_lif_to_ome_tiff.py` writes the same raw z-stack of each `.lif` as a lossless OME-TIFF (CZYX, 8-bit, zlib; physical pixel sizes, channel names and acquisition description in the OME-XML). `--verify` checks existing OME-TIFFs against the `.lif` files without writing anything.
@@ -150,11 +150,16 @@ The pipeline expects paired `.tif` images with the following naming pattern:
 
 Example: `D7_C5BO_GFP_002.tif`, `D7_C5BO_PKH26_002.tif`. Token matching is case-insensitive (`d7_c5bo_gfp_002.tif` pairs with `D7_C5BO_PKH26_002.tif`). The timepoint token is the actual day post-seeding.
 
-Recognized sample identifiers: C5BO, C3PV, Fb2294 (the filename tokens `Fb2294`, `FB2294`, `2294` and the mistyped `FB2291` (experiment 3, day 1) all map to `Fb2294`).
+Recognized sample identifiers: C5BO, C3PV, Fb1609 (filename tokens are matched case-insensitively).
 
 ## CSV output format
 
 All CSV files are standard comma-separated files with period (`.`) decimal marks and open with the default settings of pandas, R and Excel (English locale).
+
+## Version history
+
+- 1.1.0 (2026-11-11): the third control donor is named Fb1609, its published strain code, in the filename parser and the documentation. The analysis is unchanged and the deposited values are identical.
+- 1.0.0 (2026-11-11): first release.
 
 ## License
 

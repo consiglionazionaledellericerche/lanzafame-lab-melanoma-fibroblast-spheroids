@@ -108,7 +108,7 @@ def main():
     folder_of = dict(zip(inv.source_experiment, inv.folder))
     rows = []; masks = {}
     for _, r in sm.iterrows():
-        fo = folder_of[r.source_experiment]; fb = r.file_base.upper().replace("FB2294", "2294")
+        fo = folder_of[r.source_experiment]; fb = r.file_base.upper()
         kg = (fo, fb, "GFP") if (fo, fb, "GFP") in idx else (fo, r.file_base.upper(), "GFP")
         g = ex.load_gray(idx[kg]); rr = ex.load_gray(idx[(kg[0], kg[1], "PKH26")])
         gn, rn = ex.normalize_percentile(g), ex.normalize_percentile(rr)
