@@ -9,18 +9,10 @@ doi: 10.5281/zenodo.24133753
 repository-code: "https://github.com/consiglionazionaledellericerche/lanzafame-lab-melanoma-fibroblast-spheroids"
 # TODO after publication: add the DOI of the article to preferred-citation.
 authors:
-  - family-names: Veniali
-    given-names: Gaia
-    affiliation: "CNR-IGM Institute of Molecular Genetics \"Luigi Luca Cavalli-Sforza\", Pavia, Italy"
-  - family-names: Galli Balestreri
-    given-names: Elena
-    affiliation: "CNR-IGM Institute of Molecular Genetics \"Luigi Luca Cavalli-Sforza\", Pavia, Italy"
-  - family-names: Orioli
-    given-names: Donata
-    affiliation: "CNR-IGM Institute of Molecular Genetics \"Luigi Luca Cavalli-Sforza\", Pavia, Italy"
   - family-names: Lanzafame
     given-names: Manuela
     affiliation: "CNR-IGM Institute of Molecular Genetics \"Luigi Luca Cavalli-Sforza\", Pavia, Italy"
+    orcid: "https://orcid.org/0000-0002-0456-1134"
 preferred-citation:
   type: article
   title: "Fluorescence imaging dataset of melanoma fibroblast co-spheroids with morphometric and radial profiling data"

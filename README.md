@@ -176,4 +176,4 @@ morphometric and radial profiling data. Scientific Data (submitted).
 
 ## Contact
 
-Donata Orioli and Manuela Lanzafame, CNR-IGM Institute of Molecular Genetics "Luigi Luca Cavalli-Sforza", Pavia, Italy — <https://www.igm.cnr.it/istituto-2/organizzazione/personale/lanzafame-manuela/>
+Manuela Lanzafame, CNR-IGM Institute of Molecular Genetics "Luigi Luca Cavalli-Sforza", Pavia, Italy — <https://www.igm.cnr.it/istituto-2/organizzazione/personale/lanzafame-manuela/>

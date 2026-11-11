@@ -60,8 +60,6 @@ maintenance:
   contacts:
   - name: Manuela Lanzafame
     affiliation: CNR-IGM Institute of Molecular Genetics "Luigi Luca Cavalli-Sforza"
-  - name: Donata Orioli
-    affiliation: CNR-IGM Institute of Molecular Genetics "Luigi Luca Cavalli-Sforza"
 localisation:
   localisationReady: false
   availableLanguages:
