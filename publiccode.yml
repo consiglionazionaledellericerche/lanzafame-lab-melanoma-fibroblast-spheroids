@@ -2,7 +2,7 @@
 # metadata file that makes public software easily discoverable.
 # More info at https://github.com/publiccodeyml/publiccode.yml
 
-publiccodeYmlVersion: '0.7'
+publiccodeYmlVersion: '0.5'
 name: melanoma-fibroblast-spheroids
 url: https://github.com/consiglionazionaledellericerche/lanzafame-lab-melanoma-fibroblast-spheroids
 softwareVersion: 1.1.0
